@@ -1,0 +1,1070 @@
+{
+  "Stock應用": [
+    {
+      "flow_name": "取得股價",
+      "description": "",
+      "flowobject": {
+        "flow_item_counter": 5,
+        "flow_line_counter": 5,
+        "form_object": {
+          "form_item_counter": 0,
+          "form_box_counter": 0,
+          "user": [],
+          "group": [],
+          "level": [],
+          "title": false,
+          "status": [],
+          "op1": [],
+          "op2": [],
+          "items": []
+        },
+        "is_sub": false,
+        "subflow": [],
+        "items": [
+          {
+            "id": "FITEM_1",
+            "type": "start",
+            "text": "新增股票代號變數",
+            "left": 0,
+            "top": 0,
+            "config": {
+              "error_pass": false,
+              "load_balance": false,
+              "callable": false,
+              "input": [
+                {
+                  "require": true,
+                  "value": null,
+                  "name": "Stock_id",
+                  "des": ""
+                }
+              ],
+              "output": [],
+              "subflow_input": [],
+              "subflow_output": [],
+              "top": 0,
+              "left": 420,
+              "subflow_id": ""
+            }
+          },
+          {
+            "id": "FITEM_4",
+            "type": "end",
+            "text": "回傳價格",
+            "left": 0,
+            "top": 0,
+            "config": {
+              "output": [
+                {
+                  "value": "$(Stock_price)",
+                  "name": "$(Stock_price)",
+                  "des": ""
+                }
+              ],
+              "calculate": [],
+              "top": 300,
+              "left": 420
+            }
+          },
+          {
+            "id": "FITEM_5",
+            "type": "python",
+            "text": "取得價格",
+            "left": 0,
+            "top": 0,
+            "config": {
+              "autoinstall": true,
+              "error_pass": false,
+              "load_balance": false,
+              "log": true,
+              "input": [
+                {
+                  "require": false,
+                  "value": "$(Stock_id)",
+                  "name": "Stock_id",
+                  "des": ""
+                },
+                {
+                  "require": false,
+                  "value": null,
+                  "name": "Stock_price",
+                  "des": ""
+                }
+              ],
+              "output": [
+                {
+                  "value": "$(Stock_price)",
+                  "name": "$(Stock_price)",
+                  "des": ""
+                }
+              ],
+              "calculate": [],
+              "code": "import twstock\n\ndef getPrice(Stock_id):\n    try:\n        last_price = ''\n        stock = twstock.realtime.get(Stock_id)\n        if stock['success']:\n            last_price = stock['realtime']['latest_trade_price']\n        if not last_price or last_price =='-' or last_price == '_':\n            last_price = '對方伺服器無回應'\n    except:\n        last_price = '對方伺服器無回應'\n    finally:\n        return last_price\n\n\nStock_price = getPrice(Stock_id)",
+              "top": 150,
+              "left": 420
+            }
+          },
+          {
+            "id": "FLINE_MW4",
+            "type": "line",
+            "config": {
+              "target_side": "top",
+              "source_side": "bottom",
+              "target_item": "FITEM_5",
+              "source_item": "FITEM_1",
+              "idcounter": 4,
+              "linebox_left": 480,
+              "linebox_top": 125,
+              "linebox_long": 0,
+              "linebox_top_width": 45,
+              "linebox_bottom_width": -45,
+              "linebox_arrow_top": 160,
+              "linebox_arrow_left": 476
+            }
+          },
+          {
+            "id": "FLINE_MW5",
+            "type": "line",
+            "config": {
+              "target_side": "top",
+              "source_side": "bottom",
+              "target_item": "FITEM_4",
+              "source_item": "FITEM_5",
+              "idcounter": 5,
+              "linebox_left": 480,
+              "linebox_top": 275,
+              "linebox_long": 0,
+              "linebox_top_width": 45,
+              "linebox_bottom_width": -45,
+              "linebox_arrow_top": 310,
+              "linebox_arrow_left": 476
+            }
+          }
+        ],
+        "uid": 1587447406371,
+        "version": 16777216
+      },
+      "config": {
+        "name": "取得股價",
+        "description": "",
+        "fp_show": true,
+        "attachment": true,
+        "relation": false,
+        "worklog": false,
+        "history": true,
+        "title_field": null,
+        "status_field": null,
+        "display_field": "{\"data_no\": \"\\u8cc7\\u6599\\u7de8\\u865f\", \"stop_chart_text\": \"\\u95dc\\u5361\\u540d\\u7a31\", \"error\": \"\\u662f\\u5426\\u7570\\u5e38\", \"error_message\": \"\\u932f\\u8aa4\\u8a0a\\u606f\", \"create_user\": \"\\u958b\\u55ae\\u4eba\\u54e1\", \"updatetime\": \"\\u66f4\\u65b0\\u6642\\u9593\"}",
+        "search_field": null,
+        "subflow": []
+      }
+    },
+    {
+      "flow_name": "股價檢查",
+      "description": "",
+      "flowobject": {
+        "flow_item_counter": 13,
+        "flow_line_counter": 19,
+        "form_object": {
+          "form_item_counter": 7,
+          "form_box_counter": 2,
+          "user": [],
+          "group": [],
+          "level": [],
+          "title": false,
+          "status": [],
+          "op1": [],
+          "op2": [],
+          "items": [
+            {
+              "id": "FORMBOX_1",
+              "type": "box6",
+              "parent": "public",
+              "hidden": false,
+              "config": {
+                "idcounter": 1,
+                "color": "box box-primary",
+                "title": "基本資訊"
+              }
+            },
+            {
+              "id": "FORMITM_1",
+              "type": "h_title",
+              "parent": "FORMBOX_1",
+              "hidden": false,
+              "config": {
+                "idcounter": 1,
+                "title": "台股 ‧ 股票代號",
+                "require": false,
+                "placeholder": "",
+                "value": "",
+                "regex": "",
+                "readonly": false,
+                "type": "inputbox"
+              }
+            },
+            {
+              "id": "FORMITM_2",
+              "type": "h_level",
+              "parent": "FORMBOX_1",
+              "hidden": false,
+              "config": {
+                "idcounter": 2,
+                "title": "燈號",
+                "lists": [
+                  {
+                    "value": "green",
+                    "text": "綠燈"
+                  },
+                  {
+                    "value": "yellow",
+                    "text": "黃燈"
+                  },
+                  {
+                    "value": "red",
+                    "text": "紅燈"
+                  }
+                ],
+                "value": "green",
+                "require": true,
+                "readonly": false
+              }
+            },
+            {
+              "id": "FORMITM_3",
+              "type": "inputbox",
+              "parent": "FORMBOX_1",
+              "hidden": false,
+              "config": {
+                "idcounter": 3,
+                "title": "希望價格 (NTD)",
+                "require": false,
+                "placeholder": "",
+                "type": "number",
+                "value": "",
+                "regex": "",
+                "readonly": false,
+                "rows": 0
+              }
+            },
+            {
+              "id": "FORMITM_4",
+              "type": "inputbox",
+              "parent": "FORMBOX_1",
+              "hidden": false,
+              "config": {
+                "idcounter": 4,
+                "title": "實際價格 (USD)",
+                "require": false,
+                "placeholder": "",
+                "type": "number",
+                "value": "",
+                "regex": "",
+                "readonly": false,
+                "rows": 0
+              }
+            },
+            {
+              "id": "FORMBOX_2",
+              "type": "box6",
+              "parent": "public",
+              "hidden": false,
+              "config": {
+                "idcounter": 2,
+                "color": "box box-primary",
+                "title": "操作"
+              }
+            },
+            {
+              "id": "FORMITM_5",
+              "type": "h_group",
+              "parent": "FORMBOX_2",
+              "hidden": false,
+              "config": {
+                "idcounter": 5,
+                "group_title": "單位",
+                "lists": [],
+                "value": "",
+                "require": true,
+                "readonly": false,
+                "user": true,
+                "user_title": "受派人",
+                "user_require": false
+              }
+            },
+            {
+              "id": "FORMITM_6",
+              "type": "h_status",
+              "parent": "FORMBOX_2",
+              "hidden": false,
+              "config": {
+                "idcounter": 6,
+                "title": "下一步",
+                "lists": [
+                  {
+                    "value": "close",
+                    "text": "關閉"
+                  },
+                  {
+                    "value": "go",
+                    "text": "下單"
+                  },
+                  {
+                    "value": "wait",
+                    "text": "檢查完畢"
+                  }
+                ],
+                "value": "wait",
+                "require": true,
+                "readonly": false
+              }
+            },
+            {
+              "id": "FORMITM_7",
+              "type": "inputbox",
+              "parent": "FORMBOX_1",
+              "hidden": false,
+              "config": {
+                "idcounter": 7,
+                "title": "實際價格 (NTD)",
+                "require": false,
+                "placeholder": "",
+                "type": "text",
+                "value": "",
+                "regex": "",
+                "readonly": false,
+                "rows": 0
+              }
+            }
+          ]
+        },
+        "is_sub": false,
+        "subflow": [
+          {
+            "flow_item_counter": 4,
+            "flow_line_counter": 4,
+            "form_object": {
+              "form_item_counter": 7,
+              "form_box_counter": 2,
+              "user": [],
+              "group": [],
+              "level": [],
+              "title": false,
+              "status": [],
+              "op1": [],
+              "op2": [],
+              "items": [
+                {
+                  "id": "FORMBOX_1",
+                  "type": "box6",
+                  "parent": "public",
+                  "hidden": false,
+                  "config": {
+                    "idcounter": 1,
+                    "color": "box box-primary",
+                    "title": "基本資訊"
+                  }
+                },
+                {
+                  "id": "FORMITM_1",
+                  "type": "h_title",
+                  "parent": "FORMBOX_1",
+                  "hidden": false,
+                  "config": {
+                    "idcounter": 1,
+                    "title": "台股 ‧ 股票代號",
+                    "require": false,
+                    "placeholder": "",
+                    "value": "",
+                    "regex": "",
+                    "readonly": false,
+                    "type": "inputbox"
+                  }
+                },
+                {
+                  "id": "FORMITM_2",
+                  "type": "h_level",
+                  "parent": "FORMBOX_1",
+                  "hidden": false,
+                  "config": {
+                    "idcounter": 2,
+                    "title": "燈號",
+                    "lists": [
+                      {
+                        "value": "green",
+                        "text": "綠燈"
+                      },
+                      {
+                        "value": "yellow",
+                        "text": "黃燈"
+                      },
+                      {
+                        "value": "red",
+                        "text": "紅燈"
+                      }
+                    ],
+                    "value": "green",
+                    "require": true,
+                    "readonly": false
+                  }
+                },
+                {
+                  "id": "FORMITM_3",
+                  "type": "inputbox",
+                  "parent": "FORMBOX_1",
+                  "hidden": false,
+                  "config": {
+                    "idcounter": 3,
+                    "title": "希望價格 (NTD)",
+                    "require": false,
+                    "placeholder": "",
+                    "type": "number",
+                    "value": "",
+                    "regex": "",
+                    "readonly": false,
+                    "rows": 0
+                  }
+                },
+                {
+                  "id": "FORMITM_4",
+                  "type": "inputbox",
+                  "parent": "FORMBOX_1",
+                  "hidden": false,
+                  "config": {
+                    "idcounter": 4,
+                    "title": "實際價格 (USD)",
+                    "require": false,
+                    "placeholder": "",
+                    "type": "number",
+                    "value": "",
+                    "regex": "",
+                    "readonly": false,
+                    "rows": 0
+                  }
+                },
+                {
+                  "id": "FORMBOX_2",
+                  "type": "box6",
+                  "parent": "public",
+                  "hidden": false,
+                  "config": {
+                    "idcounter": 2,
+                    "color": "box box-primary",
+                    "title": "操作"
+                  }
+                },
+                {
+                  "id": "FORMITM_5",
+                  "type": "h_group",
+                  "parent": "FORMBOX_2",
+                  "hidden": false,
+                  "config": {
+                    "idcounter": 5,
+                    "group_title": "單位",
+                    "lists": [],
+                    "value": "",
+                    "require": true,
+                    "readonly": false,
+                    "user": true,
+                    "user_title": "受派人",
+                    "user_require": false
+                  }
+                },
+                {
+                  "id": "FORMITM_6",
+                  "type": "h_status",
+                  "parent": "FORMBOX_2",
+                  "hidden": false,
+                  "config": {
+                    "idcounter": 6,
+                    "title": "下一步",
+                    "lists": [
+                      {
+                        "value": "close",
+                        "text": "關閉"
+                      },
+                      {
+                        "value": "go",
+                        "text": "下單"
+                      },
+                      {
+                        "value": "wait",
+                        "text": "檢查完畢"
+                      }
+                    ],
+                    "value": "wait",
+                    "require": true,
+                    "readonly": false
+                  }
+                },
+                {
+                  "id": "FORMITM_7",
+                  "type": "inputbox",
+                  "parent": "FORMBOX_1",
+                  "hidden": false,
+                  "config": {
+                    "idcounter": 7,
+                    "title": "實際價格 (NTD)",
+                    "require": false,
+                    "placeholder": "",
+                    "type": "text",
+                    "value": "",
+                    "regex": "",
+                    "readonly": false,
+                    "rows": 0
+                  }
+                }
+              ]
+            },
+            "is_sub": false,
+            "subflow": [],
+            "items": [
+              {
+                "id": "FITEM_1",
+                "type": "start",
+                "text": "",
+                "left": 0,
+                "top": 0,
+                "config": {
+                  "error_pass": false,
+                  "load_balance": false,
+                  "callable": false,
+                  "input": [
+                    {
+                      "require": false,
+                      "value": null,
+                      "name": "NTD",
+                      "des": ""
+                    },
+                    {
+                      "require": false,
+                      "value": null,
+                      "name": "USD",
+                      "des": ""
+                    }
+                  ],
+                  "output": [],
+                  "subflow_input": [],
+                  "subflow_output": [],
+                  "top": 0,
+                  "left": 420,
+                  "subflow_id": ""
+                }
+              },
+              {
+                "id": "FITEM_4",
+                "type": "end",
+                "text": "",
+                "left": 0,
+                "top": 0,
+                "config": {
+                  "output": [
+                    {
+                      "value": "$(US)",
+                      "name": "$(USD)",
+                      "des": ""
+                    }
+                  ],
+                  "calculate": [
+                    {
+                      "type": "num/",
+                      "from": "$(NTD)",
+                      "para1": "31",
+                      "para2": null,
+                      "to": "$(US)"
+                    },
+                    {
+                      "type": "string",
+                      "from": "$(US)",
+                      "para1": null,
+                      "para2": null,
+                      "to": "$(US)"
+                    }
+                  ],
+                  "top": 300,
+                  "left": 420
+                }
+              },
+              {
+                "id": "FLINE_MW4",
+                "type": "line",
+                "config": {
+                  "target_side": "top",
+                  "source_side": "bottom",
+                  "target_item": "FITEM_4",
+                  "source_item": "FITEM_1",
+                  "idcounter": 4,
+                  "linebox_left": 480,
+                  "linebox_top": 200,
+                  "linebox_long": 0,
+                  "linebox_top_width": 120,
+                  "linebox_bottom_width": -120,
+                  "linebox_arrow_top": 310,
+                  "linebox_arrow_left": 476
+                }
+              }
+            ],
+            "uid": 1587447583425,
+            "name": "台幣換算美金",
+            "description": ""
+          }
+        ],
+        "items": [
+          {
+            "id": "FITEM_1",
+            "type": "start",
+            "text": "",
+            "left": 0,
+            "top": 0,
+            "config": {
+              "error_pass": false,
+              "load_balance": false,
+              "callable": false,
+              "input": [
+                {
+                  "require": false,
+                  "value": "#(FORMITM_1)",
+                  "name": "Stock_id",
+                  "des": ""
+                },
+                {
+                  "require": false,
+                  "value": "#(FORMITM_3)",
+                  "name": "Hope_price",
+                  "des": ""
+                },
+                {
+                  "require": false,
+                  "value": "#(FORMITM_4)",
+                  "name": "Stock_price",
+                  "des": ""
+                },
+                {
+                  "require": false,
+                  "value": "股票代號：",
+                  "name": "title",
+                  "des": ""
+                }
+              ],
+              "output": [],
+              "subflow_input": [],
+              "subflow_output": [],
+              "top": 0,
+              "left": 420,
+              "subflow_id": ""
+            }
+          },
+          {
+            "id": "FITEM_4",
+            "type": "end",
+            "text": "",
+            "left": 0,
+            "top": 0,
+            "config": {
+              "output": [],
+              "calculate": [],
+              "top": 720,
+              "left": 420
+            }
+          },
+          {
+            "id": "FITEM_6",
+            "type": "inflow",
+            "text": "查詢股價",
+            "left": 0,
+            "top": 0,
+            "config": {
+              "error_pass": false,
+              "log": true,
+              "flow_name": "取得股價",
+              "subflow_input": [
+                {
+                  "require": false,
+                  "value": "$(Stock_id)",
+                  "name": "$(Stock_id)",
+                  "des": ""
+                }
+              ],
+              "subflow_output": [
+                {
+                  "value": "$(Stock_price)",
+                  "name": "$(Stock_price)",
+                  "des": ""
+                }
+              ],
+              "top": 100,
+              "left": 420
+            }
+          },
+          {
+            "id": "FITEM_7",
+            "type": "subflow",
+            "text": "換算美金",
+            "left": 0,
+            "top": 0,
+            "config": {
+              "error_pass": false,
+              "log": false,
+              "subflow_id": "1587447583425",
+              "subflow_input": [
+                {
+                  "require": false,
+                  "value": "$(Stock_price)",
+                  "name": "NTD",
+                  "des": ""
+                },
+                {
+                  "require": false,
+                  "value": null,
+                  "name": "USD",
+                  "des": ""
+                }
+              ],
+              "subflow_output": [
+                {
+                  "value": "USD",
+                  "name": "$(USD_price)",
+                  "des": ""
+                }
+              ],
+              "top": 300,
+              "left": 420
+            }
+          },
+          {
+            "id": "FITEM_10",
+            "type": "python",
+            "text": "判斷燈號",
+            "left": 0,
+            "top": 0,
+            "config": {
+              "autoinstall": false,
+              "error_pass": false,
+              "load_balance": false,
+              "log": true,
+              "input": [
+                {
+                  "require": false,
+                  "value": "$(Stock_price)",
+                  "name": "Stock_price",
+                  "des": ""
+                },
+                {
+                  "require": false,
+                  "value": "$(Hope_price)",
+                  "name": "Hope_price",
+                  "des": ""
+                },
+                {
+                  "require": false,
+                  "value": "green",
+                  "name": "light",
+                  "des": ""
+                }
+              ],
+              "output": [
+                {
+                  "value": "$(light)",
+                  "name": "$(light)",
+                  "des": ""
+                }
+              ],
+              "calculate": [],
+              "code": "if Stock_price > Hope_price:\n    light = 'red'\nelif Stock_price < Hope_price:\n    light = 'green'\nelse:\n    light = 'yellow'",
+              "top": 200,
+              "left": 420
+            }
+          },
+          {
+            "id": "FLINE_MW6",
+            "type": "line",
+            "config": {
+              "target_side": "top",
+              "source_side": "bottom",
+              "target_item": "FITEM_10",
+              "source_item": "FITEM_6",
+              "idcounter": 6,
+              "linebox_left": 480,
+              "linebox_top": 200,
+              "linebox_long": 0,
+              "linebox_top_width": 20,
+              "linebox_bottom_width": -20,
+              "linebox_arrow_top": 210,
+              "linebox_arrow_left": 476
+            }
+          },
+          {
+            "id": "FLINE_MW7",
+            "type": "line",
+            "config": {
+              "target_side": "top",
+              "source_side": "bottom",
+              "target_item": "FITEM_7",
+              "source_item": "FITEM_10",
+              "idcounter": 7,
+              "linebox_left": 480,
+              "linebox_top": 300,
+              "linebox_long": 0,
+              "linebox_top_width": 20,
+              "linebox_bottom_width": -20,
+              "linebox_arrow_top": 310,
+              "linebox_arrow_left": 476
+            }
+          },
+          {
+            "id": "FITEM_11",
+            "type": "form",
+            "text": "是否下單",
+            "left": 0,
+            "top": 0,
+            "config": {
+              "calculate": [
+                {
+                  "type": "add",
+                  "from": "$(title)",
+                  "para1": "$(Stock_id)",
+                  "para2": null,
+                  "to": "$(title)"
+                }
+              ],
+              "input": [
+                {
+                  "require": false,
+                  "value": "$(title)",
+                  "name": "#(FORMITM_1)",
+                  "des": ""
+                },
+                {
+                  "require": false,
+                  "value": "$(USD_price)",
+                  "name": "#(FORMITM_4)",
+                  "des": ""
+                },
+                {
+                  "require": false,
+                  "value": "$(Stock_price)",
+                  "name": "#(FORMITM_7)",
+                  "des": ""
+                },
+                {
+                  "require": false,
+                  "value": "$(light)",
+                  "name": "#(FORMITM_2)",
+                  "des": ""
+                },
+                {
+                  "require": false,
+                  "value": "wait",
+                  "name": "#(FORMITM_6)",
+                  "des": ""
+                }
+              ],
+              "input1": [
+                {
+                  "require": false,
+                  "value": "go",
+                  "name": "#(FORMITM_6)",
+                  "des": ""
+                }
+              ],
+              "input2": [
+                {
+                  "require": false,
+                  "value": "close",
+                  "name": "#(FORMITM_6)",
+                  "des": ""
+                }
+              ],
+              "action1": true,
+              "action1_text": "下單",
+              "action2": true,
+              "action2_text": "取消",
+              "output": [],
+              "form_object": null,
+              "subflow_input": [],
+              "subflow_output": [],
+              "log": true,
+              "top": 400,
+              "left": 420,
+              "cform_object": null
+            }
+          },
+          {
+            "id": "FLINE_MW9",
+            "type": "line",
+            "config": {
+              "target_side": "top",
+              "source_side": "bottom",
+              "target_item": "FITEM_11",
+              "source_item": "FITEM_7",
+              "idcounter": 9,
+              "linebox_left": 480,
+              "linebox_top": 400,
+              "linebox_long": 0,
+              "linebox_top_width": 20,
+              "linebox_bottom_width": -20,
+              "linebox_arrow_top": 410,
+              "linebox_arrow_left": 476
+            }
+          },
+          {
+            "id": "FITEM_12",
+            "type": "switch",
+            "text": "",
+            "left": 0,
+            "top": 0,
+            "config": {
+              "calculate": [],
+              "rules": [
+                {
+                  "target": "FITEM_13",
+                  "value1": "go",
+                  "value2": "#(FORMITM_6)",
+                  "rule": "="
+                },
+                {
+                  "target": "FITEM_4",
+                  "value1": "close",
+                  "value2": "#(FORMITM_6)",
+                  "rule": "="
+                }
+              ],
+              "top": 500,
+              "left": 420
+            }
+          },
+          {
+            "id": "FLINE_MW10",
+            "type": "line",
+            "config": {
+              "target_side": "top",
+              "source_side": "bottom",
+              "target_item": "FITEM_12",
+              "source_item": "FITEM_11",
+              "idcounter": 10,
+              "linebox_left": 480,
+              "linebox_top": 500,
+              "linebox_long": 0,
+              "linebox_top_width": 20,
+              "linebox_bottom_width": -20,
+              "linebox_arrow_top": 510,
+              "linebox_arrow_left": 476
+            }
+          },
+          {
+            "id": "FITEM_13",
+            "type": "python",
+            "text": "下單",
+            "left": 0,
+            "top": 0,
+            "config": {
+              "autoinstall": false,
+              "error_pass": false,
+              "load_balance": false,
+              "log": false,
+              "input": [],
+              "output": [],
+              "calculate": [],
+              "code": "",
+              "top": 600,
+              "left": 420
+            }
+          },
+          {
+            "id": "FLINE_MW14",
+            "type": "line",
+            "config": {
+              "target_side": "top",
+              "source_side": "bottom",
+              "target_item": "FITEM_13",
+              "source_item": "FITEM_12",
+              "idcounter": 14,
+              "linebox_left": 480,
+              "linebox_top": 600,
+              "linebox_long": 0,
+              "linebox_top_width": 20,
+              "linebox_bottom_width": -20,
+              "linebox_arrow_top": 610,
+              "linebox_arrow_left": 476
+            }
+          },
+          {
+            "id": "FLINE_MW15",
+            "type": "line",
+            "config": {
+              "target_side": "top",
+              "source_side": "bottom",
+              "target_item": "FITEM_4",
+              "source_item": "FITEM_13",
+              "idcounter": 15,
+              "linebox_left": 480,
+              "linebox_top": 710,
+              "linebox_long": 0,
+              "linebox_top_width": 30,
+              "linebox_bottom_width": -30,
+              "linebox_arrow_top": 730,
+              "linebox_arrow_left": 476
+            }
+          },
+          {
+            "id": "FLINE_MH16",
+            "type": "line",
+            "config": {
+              "target_side": "right",
+              "source_side": "right",
+              "target_item": "FITEM_4",
+              "source_item": "FITEM_12",
+              "idcounter": 16,
+              "linebox_left": 640,
+              "linebox_top": 550,
+              "linebox_long": 220,
+              "linebox_top_width": 100,
+              "linebox_bottom_width": 100,
+              "linebox_arrow_top": 766,
+              "linebox_arrow_left": 540
+            }
+          },
+          {
+            "id": "FLINE_MW19",
+            "type": "line",
+            "config": {
+              "target_side": "top",
+              "source_side": "bottom",
+              "target_item": "FITEM_6",
+              "source_item": "FITEM_1",
+              "idcounter": 19,
+              "linebox_left": 480,
+              "linebox_top": 100,
+              "linebox_long": 0,
+              "linebox_top_width": 20,
+              "linebox_bottom_width": -20,
+              "linebox_arrow_top": 110,
+              "linebox_arrow_left": 476
+            }
+          }
+        ],
+        "uid": 1587447436493
+      },
+      "config": {
+        "name": "股價檢查",
+        "description": "",
+        "fp_show": true,
+        "attachment": true,
+        "relation": false,
+        "worklog": false,
+        "history": true,
+        "title_field": null,
+        "status_field": null,
+        "display_field": "{\"data_no\": \"\\u8cc7\\u6599\\u7de8\\u865f\", \"stop_chart_text\": \"\\u95dc\\u5361\\u540d\\u7a31\", \"error\": \"\\u662f\\u5426\\u7570\\u5e38\", \"error_message\": \"\\u932f\\u8aa4\\u8a0a\\u606f\", \"create_user\": \"\\u958b\\u55ae\\u4eba\\u54e1\", \"updatetime\": \"\\u66f4\\u65b0\\u6642\\u9593\"}",
+        "search_field": null,
+        "subflow": [
+          {
+            "uid": 1587447583425,
+            "name": "台幣換算美金",
+            "description": ""
+          }
+        ]
+      }
+    }
+  ]
+}

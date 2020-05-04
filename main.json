@@ -1,42 +1,20 @@
 {
-"group":[
-	{
-	"name":"測試應用1",
-	"description":"測試用"
-	},
-	{
-	"name":"測試應用2",
-	"description":"測試用"
-	}
-],
 "content":[
 	{
+    "type":"main",
 	"name":"測試1",
 	"description":"測試用",
-	"group":"測試應用1",
-	"flowobject":"test/test.json",
+    "path":"test/main.json",
+    "version":"0.1",
 	"update_time":"2020-04-23 14:54:07"
 	},
 	{
-	"name":"測試1",
-	"description":"測試用",
-	"group":"測試應用1",
-	"flowobject":"test/test.json",
-	"update_time":"2020-04-23 14:54:07"
-	},
-	{
-	"name":"測試1",
-	"description":"測試用",
-	"group":"測試應用1",
-	"flowobject":"test/test.json",
-	"update_time":"2020-04-23 14:54:07"
-	},
-	{
-	"name":"測試1",
-	"description":"測試用",
-	"group":"測試應用2",
-	"flowobject":"test/test.json",
-	"update_time":"2020-04-23 14:54:07"
+	"type":"flowobject",
+    "name":"預設流程",
+    "description":"預設流程工具包",
+    "path":"default/flowobject.json",
+    "version":"0.1",
+    "update_time":"2020-04-23 14:54:07"
 	}
 ]
 }

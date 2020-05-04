@@ -1,0 +1,15 @@
+{
+"content":[
+	{
+	"type":"flowobject",
+    "name":"取得股價",
+    "description":"測試用流程",
+    "path":"stock.json",
+    "version":"0.1",
+    "update_time":"2020-04-23 14:54:07"
+	}
+]
+}
+
+
+
