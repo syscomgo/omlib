@@ -2,8 +2,8 @@
 "content":[
 	{
 	"type":"main",
-    "name":"預設監控流程",
-    "description":"預設監控流程工具包",
+    "name":"Basic Performace",
+    "description":"default performace monitor",
 	"path":"/default/",
     "file":"timer.json",
     "version":"1.0.0.1",

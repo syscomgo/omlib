@@ -2,8 +2,8 @@
 "content":[
 	{
 	"type":"flowobject",
-    "name":"OMFLOW預設流程",
-    "description":"內建的事故/問題/變更流程",
+    "name":"OMFLOW Default App",
+    "description":"include Event/IM/PM/CM .. etc",
 	"path":"/default/",
     "file":"default_flow.omf",
     "version":"1.0.0.1",

@@ -2,8 +2,8 @@
 "content":[
 	{
 	"type":"flowobject",
-    "name":"預設監控流程",
-    "description":"預設效能監控",
+    "name":"Basic Performace",
+    "description":"default performace monitor",
 	"path":"/default/",
     "file":"default_policy.omf",
     "version":"1.0.0.1",
