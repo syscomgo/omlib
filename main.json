@@ -2,20 +2,20 @@
 "content":[
 	{
     "type":"main",
-	"name":"Test App",
-	"description":"Some App for test",
+	"name":"測試1",
+	"description":"測試用",
 	"path":"/test/",
     "file":"main.json",
     "version":"0.1",
 	"update_time":"2020-04-23 14:54:07"
 	},
 	{
-	"type":"main",
-    "name":"OMFLOW default App",
-    "description":"OMFLOW default App for update. ",
+	"type":"flowobject",
+    "name":"預設流程",
+    "description":"預設流程工具包",
 	"path":"/default/",
-    "file":"main.json",
-    "version":"1.0.0.1",
+    "file":"default_flow.omf",
+    "version":"1.0",
     "update_time":"2020-07-24 12:00:00"
 	}
 ]

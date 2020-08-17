@@ -1,12 +1,12 @@
 {
 "content":[
 	{
-	"type":"main",
-    "name":"Basic Performace",
-    "description":"default performace monitor",
+	"type":"flowobject",
+    "name":"預設監控流程",
+    "description":"預設監控流程工具包",
 	"path":"/default/",
-    "file":"timer.json",
-    "version":"1.0.0.1",
+    "file":"default_policy.omf",
+    "version":"1.0",
     "update_time":"2020-07-24 12:00:00"
 	}
 ]
