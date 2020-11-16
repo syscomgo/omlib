@@ -1,0 +1,16 @@
+{
+"content":[
+	{
+	"type":"flowobject",
+    "name":"OMFLOW VMware APP",
+    "description":"some operation for VMware",
+	"path":"/vmware/",
+    "file":"OMFLOW-vmware_flow.omf",
+    "version":"1.1.1.0",
+    "update_time":"2020-11-16 16:00:00"
+	}
+]
+}
+
+
+

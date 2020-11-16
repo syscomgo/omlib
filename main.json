@@ -2,21 +2,39 @@
 "content":[
 	{
     "type":"main",
-	"name":"測試1",
-	"description":"測試用",
+	"name":"Test App",
+	"description":"Some App for test",
 	"path":"/test/",
     "file":"main.json",
     "version":"0.1",
 	"update_time":"2020-04-23 14:54:07"
 	},
 	{
-	"type":"flowobject",
-    "name":"預設流程",
-    "description":"預設流程工具包",
+	"type":"main",
+    "name":"OMFLOW default App",
+    "description":"OMFLOW default App for update. ",
 	"path":"/default/",
-    "file":"default_flow.omf",
-    "version":"1.0",
-    "update_time":"2020-07-24 12:00:00"
+    "file":"main.json",
+    "version":"1.1.1.0",
+    "update_time":"2020-11-16 16:00:00"
+	},
+	{
+	"type":"main",
+    "name":"OMFLOW VMware App",
+    "description":"OMFLOW VMware App for update. ",
+	"path":"/vmware/",
+    "file":"main.json",
+    "version":"1.1.1.0",
+    "update_time":"2020-11-16 16:00:00"
+	},
+	{
+	"type":"main",
+    "name":"OMFLOW SNMP App",
+    "description":"OMFLOW SNMP App for update. ",
+	"path":"/snmp/",
+    "file":"main.json",
+    "version":"1.1.1.0",
+    "update_time":"2020-11-16 16:00:00"
 	}
 ]
 }
