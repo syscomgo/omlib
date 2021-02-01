@@ -6,8 +6,8 @@
     "description":"default performace monitor",
 	"path":"/default/",
     "file":"default_policy.omf",
-    "version":"1.0.0.1",
-    "update_time":"2020-07-24 12:00:00"
+    "version":"1.1.0.0",
+    "update_time":"2020-11-16 16:00:00"
 	}
 ]
 }
