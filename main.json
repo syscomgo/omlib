@@ -15,8 +15,8 @@
     "description":"OMFLOW default App for update. ",
 	"path":"/default/",
     "file":"main.json",
-    "version":"1.1.1.0",
-    "update_time":"2020-11-16 16:00:00"
+    "version":"1.1.2.2",
+    "update_time":"2020-04-06 16:00:00"
 	},
 	{
 	"type":"main",
