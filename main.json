@@ -5,7 +5,7 @@
     "type":"main",
 	"name":"Test App",
 	"description":"Some App for test",
-	"language":"none"
+	"language":"none",
 	"path":"/test/",
     "file":"main.json",
     "version":"0.1",
