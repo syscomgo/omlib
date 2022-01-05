@@ -4,10 +4,41 @@
 	"type":"flowobject",
     "name":"OMFLOW Default App",
     "description":"include Event/IM/PM/CM .. etc",
+    "language":"en",
 	"path":"/default/",
-    "file":"default_flow.omf",
-    "version":"1.1.3.1",
-    "update_time":"2021-10-13 11:30:00"
+    "file":"default_flow_en.omf",
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
+	},
+	{
+	"type":"flowobject",
+    "name":"OMFLOW デフォルト プロセス",
+    "description":"include Event/IM/PM/CM .. etc",
+    "language":"ja",
+	"path":"/default/",
+    "file":"default_flow_ja.omf",
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
+	},
+	{
+	"type":"flowobject",
+    "name":"OMFLOW 预设流程",
+    "description":"include Event/IM/PM/CM .. etc",
+    "language":"zh-hans",
+	"path":"/default/",
+    "file":"default_flow_zh-hans.omf",
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
+	},
+	{
+	"type":"flowobject",
+    "name":"OMFLOW 預設流程",
+    "description":"include Event/IM/PM/CM .. etc",
+    "language":"zh-hant",
+	"path":"/default/",
+    "file":"default_flow_zh-hant.omf",
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
 	}
 ]
 }

@@ -1,32 +1,101 @@
 {
 "content":[
+	// Test App
 	{
     "type":"main",
 	"name":"Test App",
 	"description":"Some App for test",
+	"language":"none"
 	"path":"/test/",
     "file":"main.json",
     "version":"0.1",
 	"update_time":"2020-04-23 14:54:07"
 	},
+	// Deafult App
 	{
 	"type":"main",
     "name":"OMFLOW default App",
     "description":"OMFLOW default App for update. ",
+    "language":"en",
 	"path":"/default/",
     "file":"main.json",
-    "version":"1.1.3.1",
-    "update_time":"2020-10-13 11:30:00"
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
 	},
+	{
+	"type":"main",
+    "name":"OMFLOW デフォルト プロセス",
+    "description":"OMFLOW デフォルトのプロセスのツールキット. ",
+    "language":"ja",
+	"path":"/default/",
+    "file":"main.json",
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
+	},
+	{
+	"type":"main",
+    "name":"OMFLOW 预设流程",
+    "description":"OMFLOW 预设流程工具包",
+    "language":"zh-hans",
+	"path":"/default/",
+    "file":"main.json",
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
+	},
+	{
+	"type":"main",
+    "name":"OMFLOW 預設流程",
+    "description":"OMFLOW 預設流程工具包",
+    "language":"zh-hant",
+	"path":"/default/",
+    "file":"main.json",
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
+	},
+
+	// VMware App
 	{
 	"type":"main",
     "name":"OMFLOW VMware App",
     "description":"OMFLOW VMware App for update. ",
+    "language":"none",
 	"path":"/vmware/",
     "file":"main.json",
-    "version":"1.1.1.0",
-    "update_time":"2020-11-16 16:00:00"
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
+	},
+	/*
+	{
+	"type":"main",
+    "name":"OMFLOW VMware プロセス",
+    "description":"OMFLOW VMware プロセスのツールキット. ",
+    "language":"ja",
+	"path":"/vmware/",
+    "file":"main.json",
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
+	},
+	{
+	"type":"main",
+    "name":"OMFLOW VMware 流程",
+    "description":"OMFLOW VMware 流程工具包",
+    "language":"zh-hans",
+	"path":"/vmware/",
+    "file":"main.json",
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
+	},
+	{
+	"type":"main",
+    "name":"OMFLOW VMware 流程",
+    "description":"OMFLOW VMware 流程工具包",
+    "language":"zh-hant",
+	"path":"/vmware/",
+    "file":"main.json",
+    "version":"1.1.4.0",
+    "update_time":"2022-01-05 17:30:00"
 	}
+	*/
 ]
 }
 
