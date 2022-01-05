@@ -1,6 +1,5 @@
 {
 "content":[
-	// Test App
 	{
     "type":"main",
 	"name":"Test App",
@@ -11,7 +10,6 @@
     "version":"0.1",
 	"update_time":"2020-04-23 14:54:07"
 	},
-	// Deafult App
 	{
 	"type":"main",
     "name":"OMFLOW default App",
@@ -52,8 +50,6 @@
     "version":"1.1.4.0",
     "update_time":"2022-01-05 17:30:00"
 	},
-
-	// VMware App
 	{
 	"type":"main",
     "name":"OMFLOW VMware App",
@@ -64,38 +60,7 @@
     "version":"1.1.4.0",
     "update_time":"2022-01-05 17:30:00"
 	},
-	/*
-	{
-	"type":"main",
-    "name":"OMFLOW VMware プロセス",
-    "description":"OMFLOW VMware プロセスのツールキット. ",
-    "language":"ja",
-	"path":"/vmware/",
-    "file":"main.json",
-    "version":"1.1.4.0",
-    "update_time":"2022-01-05 17:30:00"
-	},
-	{
-	"type":"main",
-    "name":"OMFLOW VMware 流程",
-    "description":"OMFLOW VMware 流程工具包",
-    "language":"zh-hans",
-	"path":"/vmware/",
-    "file":"main.json",
-    "version":"1.1.4.0",
-    "update_time":"2022-01-05 17:30:00"
-	},
-	{
-	"type":"main",
-    "name":"OMFLOW VMware 流程",
-    "description":"OMFLOW VMware 流程工具包",
-    "language":"zh-hant",
-	"path":"/vmware/",
-    "file":"main.json",
-    "version":"1.1.4.0",
-    "update_time":"2022-01-05 17:30:00"
-	}
-	*/
+	
 ]
 }
 
