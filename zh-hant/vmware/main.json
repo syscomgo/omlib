@@ -4,7 +4,7 @@
 	"type":"flowobject",
     "name":"OMFLOW VMware APP",
     "description":"VMware automation flow clone_vm/add_disk_to_vm/change_vm_nic_state ...etc,support vcenter 5.5 version or higher",
-	"path":"/zh-hant/vmware/",
+	"path":"/vmware/",
     "file":"OMFLOW-vmware_flow.omf",
     "version":"1.1.1.0",
     "update_time":"2020-11-16 16:00:00"

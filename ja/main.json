@@ -4,7 +4,7 @@
 	"type":"main",
     "name":"OMFLOW デフォルト プロセス",
     "description":"OMFLOW デフォルトのプロセスのツールキット. ",
-	"path":"/ja/default/",
+	"path":"/default/",
     "file":"main.json",
     "version":"1.1.4.0",
     "update_time":"2022-01-05 17:30:00"
@@ -13,7 +13,7 @@
 	"type":"main",
     "name":"OMFLOW VMware プロセス",
     "description":"OMFLOW VMware プロセスのツールキット. ",
-	"path":"/ja/vmware/",
+	"path":"/vmware/",
     "file":"main.json",
     "version":"1.1.4.0",
     "update_time":"2022-01-05 17:30:00"

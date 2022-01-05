@@ -4,7 +4,7 @@
 	"type":"main",
     "name":"OMFLOW 预设流程",
     "description":"OMFLOW 预设流程工具包",
-	"path":"/zh-hans/default/",
+	"path":"/default/",
     "file":"main.json",
     "version":"1.1.4.0",
     "update_time":"2022-01-05 17:30:00"
@@ -13,7 +13,7 @@
 	"type":"main",
     "name":"OMFLOW VMware 流程",
     "description":"OMFLOW VMware 流程工具包",
-	"path":"/zh-hans/vmware/",
+	"path":"/vmware/",
     "file":"main.json",
     "version":"1.1.4.0",
     "update_time":"2022-01-05 17:30:00"

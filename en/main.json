@@ -4,7 +4,7 @@
 	"type":"main",
     "name":"OMFLOW default App",
     "description":"OMFLOW default App for update. ",
-	"path":"/en/default/",
+	"path":"/default/",
     "file":"main.json",
     "version":"1.1.4.0",
     "update_time":"2022-01-05 17:30:00"
@@ -13,7 +13,7 @@
 	"type":"main",
     "name":"OMFLOW VMware App",
     "description":"OMFLOW VMware App for update. ",
-	"path":"/en/vmware/",
+	"path":"/vmware/",
     "file":"main.json",
     "version":"1.1.4.0",
     "update_time":"2022-01-05 17:30:00"
