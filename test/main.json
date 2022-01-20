@@ -4,6 +4,7 @@
 	"type":"flowobject",
     "name":"取得股價",
     "description":"測試用流程",
+	"language":"zh-hant",
 	"path":"/test/",
     "file":"stock.omf",
     "version":"0.1",
