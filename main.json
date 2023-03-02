@@ -52,8 +52,8 @@
 },
 {
 "type":"main",
-"name":"OMFLOW VMware App",
-"description":"OMFLOW VMware App for update. ",
+"name":"Apps for VMware",
+"description":"Support for VMware Products",
 "language":"none",
 "path":"/vmware/",
 "file":"main.json",
@@ -62,8 +62,8 @@
 },
 {
 "type":"main",
-"name":"OMFLOW CISCO App",
-"description":"OMFLOW CISCO App for update. ",
+"name":"Apps for CISCO",
+"description":"Support for CISCO Devices",
 "language":"none",
 "path":"/cisco/",
 "file":"main.json",
