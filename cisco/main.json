@@ -2,8 +2,8 @@
 "content":[
 	{
 	"type":"flowobject",
-    "name":"OMFLOW CISCO FirePower APP",
-    "description":"CISCO FirePower flow for access rule",
+    "name":"CISCO FirePower",
+    "description":"Automation for edit/get access rule.",
 	"language":"none",
 	"path":"/cisco/",
     "file":"OMFLOW-CISCO_FirePower.omf",
@@ -12,8 +12,8 @@
 	},
 	{
 	"type":"flowobject",
-    "name":"OMFLOW CISCO ISE APP",
-    "description":"CISCO ISE flow Network Device/Identity Group",
+    "name":"CISCO ISE",
+    "description":"Automation for ISE Network Device,Identity Group.",
 	"language":"none",
 	"path":"/cisco/",
     "file":"OMFLOW-CISCO_ISE.omf",
