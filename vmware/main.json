@@ -2,8 +2,9 @@
 "content":[
 	{
 	"type":"flowobject",
-    "name":"OMFLOW VMware APP",
-    "description":"VMware automation flow clone_vm/add_disk_to_vm/change_vm_nic_state ...etc,support vcenter 5.5 version or higher",
+    "name":"VMware vCenter",
+    "description":"Automation for VM,Disk,NIC …etc
+		Support vCenter 5.5 or higher",
 	"language":"none",
 	"path":"/vmware/",
     "file":"OMFLOW-vmware_flow.omf",
