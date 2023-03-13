@@ -53,7 +53,7 @@
 {
 "type":"main",
 "name":"Apps for VMware",
-"description":"Support for VMware Products",
+"description":"Support for VMware Products. Include VCenter, NSX, VRA.",
 "language":"none",
 "path":"/vmware/",
 "file":"main.json",
@@ -63,12 +63,42 @@
 {
 "type":"main",
 "name":"Apps for CISCO",
-"description":"Support for CISCO Devices",
+"description":"Support for CISCO Devices. Include ISE, firepower.",
 "language":"none",
 "path":"/cisco/",
 "file":"main.json",
 "version":"1.1.6.0",
 "update_time":"2023-03-02 10:30:00"
+},
+{
+"type":"main",
+"name":"Apps for FortiNet",
+"description":"Support for FortiNet. Include fortigate, firewall.",
+"language":"none",
+"path":"/fortinet/",
+"file":"main.json",
+"version":"1.1.6.0",
+"update_time":"2023-03-02 16:30:00"
+},
+{
+"type":"main",
+"name":"Apps for checkpoint",
+"description":"Support for checkpoint.",
+"language":"none",
+"path":"/checkpoint/",
+"file":"main.json",
+"version":"1.1.6.0",
+"update_time":"2023-03-02 16:30:00"
+},
+{
+"type":"main",
+"name":"Apps for Microsoft",
+"description":"Support for Microsoft. Include oddice, DHCP, DNS.",
+"language":"none",
+"path":"/microsoft/",
+"file":"main.json",
+"version":"1.1.6.0",
+"update_time":"2023-03-13 16:30:00"
 }
 ]
 }
