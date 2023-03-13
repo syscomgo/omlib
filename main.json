@@ -93,7 +93,7 @@
 {
 "type":"main",
 "name":"Apps for Microsoft",
-"description":"Support for Microsoft. Include oddice, DHCP, DNS.",
+"description":"Support for Microsoft. Include office, DHCP, DNS.",
 "language":"none",
 "path":"/microsoft/",
 "file":"main.json",
