@@ -2,16 +2,6 @@
 "content":[
 {
 "type":"main",
-"name":"Test App",
-"description":"Some App for test",
-"language":"none",
-"path":"/test/",
-"file":"main.json",
-"version":"0.1",
-"update_time":"2020-04-23 14:54:07"
-},
-{
-"type":"main",
 "name":"OMFLOW default App",
 "description":"OMFLOW default App for update. ",
 "language":"en",
