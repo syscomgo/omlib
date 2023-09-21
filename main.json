@@ -7,8 +7,8 @@
 "language":"en",
 "path":"/default/",
 "file":"main.json",
-"version":"1.1.6.0",
-"update_time":"2022-12-05 09:30:00"
+"version":"1.1.6.3",
+"update_time":"2023-09-21 10:30:00"
 },
 {
 "type":"main",
@@ -17,8 +17,8 @@
 "language":"ja",
 "path":"/default/",
 "file":"main.json",
-"version":"1.1.6.0",
-"update_time":"2022-12-05 09:30:00"
+"version":"1.1.6.3",
+"update_time":"2023-09-21 10:30:00"
 },
 {
 "type":"main",
@@ -27,8 +27,8 @@
 "language":"zh-hans",
 "path":"/default/",
 "file":"main.json",
-"version":"1.1.6.0",
-"update_time":"2022-12-05 09:30:00"
+"version":"1.1.6.3",
+"update_time":"2023-09-21 10:30:00"
 },
 {
 "type":"main",
@@ -37,8 +37,8 @@
 "language":"zh-hant",
 "path":"/default/",
 "file":"main.json",
-"version":"1.1.6.0",
-"update_time":"2022-12-05 09:30:00"
+"version":"1.1.6.3",
+"update_time":"2023-09-21 10:30:00"
 },
 {
 "type":"main",
